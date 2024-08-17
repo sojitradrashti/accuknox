@@ -11,32 +11,35 @@ import AddIcon from "@mui/icons-material/Add";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
-import { PieChart } from '@mui/x-charts/PieChart';
-import { useDrawingArea } from '@mui/x-charts/hooks';
-import { styled } from '@mui/material/styles';
+import { PieChart } from "@mui/x-charts/PieChart";
+import { useDrawingArea } from "@mui/x-charts/hooks";
+import { styled } from "@mui/material/styles";
 const Dashboard = () => {
   const names = ["Last 2 days", "Last week", "Last month", "Last year"];
 
   const data = [
-    { value: 5, label: 'A' },
-    { value: 10, label: 'B' },
-    { value: 15, label: 'C' },
-    { value: 20, label: 'D' },
+    { value: 50, label: "Connected(2)" },
+    { value: 50, label: "Not Connected(2)" },
   ];
 
+  const data1 = [
+    { value: 1689, label: "Failed(1689)" },
+    { value: 681, label: "Warning(681)" },
+    { value: 36, label: "Not available(36)" },
+    { value: 7253, label: "Passed(7253)" },
+  ];
   const size = {
-    width: 400,
-    height: 200,
+    width: 430,
+    height: 180,
   };
 
-  const StyledText = styled('text')(({ theme }) => ({
+  const StyledText = styled("text")(({ theme }) => ({
     fill: theme.palette.text.primary,
-    textAnchor: 'middle',
-    dominantBaseline: 'central',
+    textAnchor: "middle",
+    dominantBaseline: "central",
     fontSize: 20,
   }));
 
-  
   function PieCenterLabel({ children }) {
     const { width, height, left, top } = useDrawingArea();
     return (
@@ -101,11 +104,47 @@ const Dashboard = () => {
 
       <Box paddingX="25px">
         <Typography align="left">CSPM Executive Dashboard</Typography>
-      </Box>
-      <Box>
-        <PieChart series={[{ data, innerRadius: 80 }]} {...size}>
-          <PieCenterLabel>Center label</PieCenterLabel>
-        </PieChart>
+        <Box display="flex" gap={2} marginTop={3}>
+          <Box backgroundColor="white" borderRadius="16px">
+            <Typography textAlign="left" padding={3}>
+              Cloud Accounts
+            </Typography>
+            <PieChart series={[{ data, innerRadius: 70 }]} {...size}>
+              <PieCenterLabel>
+                {" "}
+                2<br /> Total
+              </PieCenterLabel>
+            </PieChart>
+          </Box>
+
+          <Box backgroundColor="white" borderRadius="16px">
+            <Typography textAlign="left" padding={3}>
+              Center label Risk Assessment
+            </Typography>
+            <PieChart series={[{ data: data1, innerRadius: 70 }]} {...size}>
+              <PieCenterLabel>
+                9659 <br /> Total
+              </PieCenterLabel>
+            </PieChart>
+          </Box>
+          <Box backgroundColor="white" borderRadius="16px">
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{
+                
+                color: "primary",
+                textAlign: "center",
+                padding: "5px",
+                marginX: "150px",
+                marginY: "100px",
+              }}
+            >
+              <AddIcon />
+              Add Widget
+            </Button>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
