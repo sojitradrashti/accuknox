@@ -14,6 +14,9 @@ import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useDrawingArea } from "@mui/x-charts/hooks";
 import { styled } from "@mui/material/styles";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import TimelineIcon from "@mui/icons-material/Timeline";
+
 const Dashboard = () => {
   const names = ["Last 2 days", "Last week", "Last month", "Last year"];
 
@@ -62,7 +65,7 @@ const Dashboard = () => {
         marginTop="35px"
       >
         <Box>
-          <Typography>CNAPP Dashboard</Typography>
+          <Typography fontWeight={800}>CNAPP Dashboard</Typography>
         </Box>
         <Box>
           <Button variant="outlined" sx={{ color: "primary" }}>
@@ -103,10 +106,12 @@ const Dashboard = () => {
       </Box>
 
       <Box paddingX="25px">
-        <Typography align="left">CSPM Executive Dashboard</Typography>
+        <Typography align="left" fontWeight={600}>
+          CSPM Executive Dashboard
+        </Typography>
         <Box display="flex" gap={2} marginTop={3}>
           <Box backgroundColor="white" borderRadius="16px">
-            <Typography textAlign="left" padding={3}>
+            <Typography textAlign="left" padding={3} fontWeight={600}>
               Cloud Accounts
             </Typography>
             <PieChart series={[{ data, innerRadius: 70 }]} {...size}>
@@ -118,7 +123,7 @@ const Dashboard = () => {
           </Box>
 
           <Box backgroundColor="white" borderRadius="16px">
-            <Typography textAlign="left" padding={3}>
+            <Typography textAlign="left" padding={3} fontWeight={600}>
               Center label Risk Assessment
             </Typography>
             <PieChart series={[{ data: data1, innerRadius: 70 }]} {...size}>
@@ -127,17 +132,17 @@ const Dashboard = () => {
               </PieCenterLabel>
             </PieChart>
           </Box>
-          <Box backgroundColor="white" borderRadius="16px">
+          <Box backgroundColor="white" borderRadius="16px" width="100%">
             <Button
               variant="outlined"
               size="small"
               sx={{
-                
                 color: "primary",
                 textAlign: "center",
-                padding: "5px",
-                marginX: "150px",
-                marginY: "100px",
+                paddingX: "4px",
+                marginX: "135px",
+                textTransform: "none", 
+                marginY: "120px",
               }}
             >
               <AddIcon />
@@ -145,6 +150,191 @@ const Dashboard = () => {
             </Button>
           </Box>
         </Box>
+        <Box paddingLeft="5px" marginY={3}>
+          <Typography align="left" fontWeight={600}>
+            CSPM Executive Dashboard
+          </Typography>
+          <Box display="flex" gap={2} marginTop={3}>
+            <Box backgroundColor="white" borderRadius="16px" width="100%">
+              <Typography textAlign="left" fontWeight={600} padding={3}>
+                Top 5 Namespace Specific Alerts
+              </Typography>
+              <Box
+                marginY="50px"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0px",
+                  height: 100,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0px",
+                  }}
+                >
+                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
+                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
+                </Box>
+
+                <Typography variant="body2">
+                  No Graph data available!
+                </Typography>
+              </Box>
+            </Box>
+
+            <Box backgroundColor="white" borderRadius="16px" width="100%" paddingX="0px">
+              <Typography textAlign="left" padding={3} fontWeight={600}>
+                Workload Alerts
+              </Typography>
+              <Box
+                marginY="50px"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0px",
+                  height: 100,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0px",
+                  }}
+                >
+                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
+                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
+                </Box>
+
+                <Typography variant="body2">
+                  No Graph data available!
+                </Typography>
+              </Box>
+            </Box>
+            <Box backgroundColor="white" borderRadius="16px" width="92%">
+              <Button
+                variant="outlined"
+                size="small"
+                sx={{
+                 textTransform: "none", 
+                  color: "primary",
+                  textAlign: "center",
+                  paddingX: "4px",
+                  marginX: "135px",
+                  marginY: "120px",
+                }}
+              >
+                <AddIcon />
+                Add Widget
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box paddingLeft="5px" marginY={3}>
+          <Typography align="left" fontWeight={600}>
+            CSPM Executive Dashboard
+          </Typography>
+          <Box display="flex" gap={2} marginTop={3}>
+            <Box backgroundColor="white" borderRadius="16px" width="100%">
+              <Typography textAlign="left" fontWeight={600} padding={3}>
+                Top 5 Namespace Specific Alerts
+              </Typography>
+              <Box
+                marginY="50px"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0px",
+                  height: 100,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0px",
+                  }}
+                >
+                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
+                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
+                </Box>
+
+                <Typography variant="body2">
+                  No Graph data available!
+                </Typography>
+              </Box>
+            </Box>
+
+            <Box backgroundColor="white" borderRadius="16px" width="100%" paddingX="0px">
+              <Typography textAlign="left" padding={3} fontWeight={600}>
+                Workload Alerts
+              </Typography>
+              <Box
+                marginY="50px"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0px",
+                  height: 100,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0px",
+                  }}
+                >
+                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
+                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
+                </Box>
+
+                <Typography variant="body2">
+                  No Graph data available!
+                </Typography>
+              </Box>
+            </Box>
+            <Box backgroundColor="white" borderRadius="16px" width="92%">
+              <Button
+                variant="outlined"
+                size="small"
+                sx={{
+                 textTransform: "none", 
+                  color: "primary",
+                  textAlign: "center",
+                  paddingX: "4px",
+                  marginX: "135px",
+                  marginY: "120px",
+                }}
+              >
+                <AddIcon />
+                Add Widget
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+
+
+
+
+
+
       </Box>
     </Box>
   );
