@@ -122,17 +122,18 @@ const Dashboard = () => {
           CSPM Executive Dashboard
         </Typography>
         <Box display="flex" gap={2} marginTop={3}>
-          <Box backgroundColor="white" borderRadius="16px">
-            <Typography textAlign="left" padding={3} fontWeight={600}>
-              Cloud Accounts
-            </Typography>
-            <PieChart series={[{ data, innerRadius: 70 }]} {...size}>
-              <PieCenterLabel>
-                {" "}
-                 2<br /> Total
-              </PieCenterLabel>
-            </PieChart>
-          </Box>
+      <Box backgroundColor="white" borderRadius="16px">
+        <Typography textAlign="left" padding={3} fontWeight={600}>
+          Cloud Accounts
+        </Typography>
+        <PieChart series={[{ data, innerRadius: 70 , colors: ['#5B99C2', '#D1E9F6'] }]} {...size}>
+          <PieCenterLabel>
+            {" "}
+            2
+            <br /> Total
+          </PieCenterLabel>
+        </PieChart>
+      </Box>
 
           <Box backgroundColor="white" borderRadius="16px">
             <Typography textAlign="left" padding={3} fontWeight={600}>
