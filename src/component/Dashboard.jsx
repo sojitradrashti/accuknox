@@ -2,7 +2,9 @@ import React from "react";
 import {
   Box,
   Button,
+  Divider,
   FormControl,
+  LinearProgress,
   MenuItem,
   Select,
   Typography,
@@ -68,27 +70,37 @@ const Dashboard = () => {
           <Typography fontWeight={800}>CNAPP Dashboard</Typography>
         </Box>
         <Box>
-          <Button variant="outlined" sx={{ color: "primary" }}>
+          <Button variant="outlined" sx={{ color: "grey.500",
+                fontWeight:"600",
+                borderColor: "grey.500", }}>
             Add Widget
             <AddIcon />
           </Button>
           <Button
             variant="outlined"
-            sx={{ color: "primary", marginLeft: "15px" }}
+            sx={{ color: "grey.500",
+            fontWeight:"600",
+            borderColor: "grey.500", marginLeft: "15px" }}
           >
             <AutorenewIcon />
           </Button>
           <Button
             variant="outlined"
-            sx={{ color: "primary", marginLeft: "15px" }}
+            sx={{ color: "grey.500",
+            fontWeight:"600",
+            borderColor: "grey.500", marginLeft: "15px" }}
           >
             <MoreVertIcon />
           </Button>
 
           <FormControl
-            sx={{ m: 1, minWidth: 120, position: "relative", marginTop: "0px" }}
+            sx={{ m: 1, minWidth: 180, position: "relative", marginTop: "0px",color:"#2E236C",borderColor: "#2E236C" }}
           >
-            <AccessTimeFilledIcon sx={{ position: "absolute", my: 1, mx: 1 }} />
+            <AccessTimeFilledIcon
+              sx={{ position: "absolute", my: 1, mx: 1 }}
+              size="small"
+            />
+            <Divider orientation="vertical" sx={{color:"#2E236C"}} />
             <Select
               sx={{ alignItems: "center", height: "40px" }}
               size="small"
@@ -117,7 +129,7 @@ const Dashboard = () => {
             <PieChart series={[{ data, innerRadius: 70 }]} {...size}>
               <PieCenterLabel>
                 {" "}
-                2<br /> Total
+                 2<br /> Total
               </PieCenterLabel>
             </PieChart>
           </Box>
@@ -133,15 +145,17 @@ const Dashboard = () => {
             </PieChart>
           </Box>
           <Box backgroundColor="white" borderRadius="16px" width="100%">
-            <Button
+          <Button
               variant="outlined"
               size="small"
               sx={{
-                color: "primary",
+                color: "grey.500",
+                fontWeight:"600",
+                borderColor: "grey.500",
                 textAlign: "center",
-                paddingX: "4px",
+                paddingX: "5px",
                 marginX: "135px",
-                textTransform: "none", 
+                textTransform: "none",
                 marginY: "120px",
               }}
             >
@@ -149,6 +163,7 @@ const Dashboard = () => {
               Add Widget
             </Button>
           </Box>
+
         </Box>
         <Box paddingLeft="5px" marginY={3}>
           <Typography align="left" fontWeight={600}>
@@ -188,7 +203,12 @@ const Dashboard = () => {
               </Box>
             </Box>
 
-            <Box backgroundColor="white" borderRadius="16px" width="100%" paddingX="0px">
+            <Box
+              backgroundColor="white"
+              borderRadius="16px"
+              width="100%"
+              paddingX="0px"
+            >
               <Typography textAlign="left" padding={3} fontWeight={600}>
                 Workload Alerts
               </Typography>
@@ -221,121 +241,171 @@ const Dashboard = () => {
               </Box>
             </Box>
             <Box backgroundColor="white" borderRadius="16px" width="92%">
-              <Button
-                variant="outlined"
-                size="small"
-                sx={{
-                 textTransform: "none", 
-                  color: "primary",
-                  textAlign: "center",
-                  paddingX: "4px",
-                  marginX: "135px",
-                  marginY: "120px",
-                }}
-              >
-                <AddIcon />
-                Add Widget
-              </Button>
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{
+                color: "grey.500",
+                fontWeight:"600",
+                borderColor: "grey.500",
+                textAlign: "center",
+                paddingX: "5px",
+                marginX: "135px",
+                textTransform: "none",
+                marginY: "120px",
+              }}
+            >
+              <AddIcon />
+              Add Widget
+            </Button>
             </Box>
           </Box>
         </Box>
 
         <Box paddingLeft="5px" marginY={3}>
           <Typography align="left" fontWeight={600}>
-            CSPM Executive Dashboard
+            Registry Scan
           </Typography>
           <Box display="flex" gap={2} marginTop={3}>
             <Box backgroundColor="white" borderRadius="16px" width="100%">
-              <Typography textAlign="left" fontWeight={600} padding={3}>
-                Top 5 Namespace Specific Alerts
-              </Typography>
-              <Box
-                marginY="50px"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0px",
-                  height: 100,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "0px",
-                  }}
-                >
-                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
-                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
-                </Box>
-
-                <Typography variant="body2">
-                  No Graph data available!
-                </Typography>
-              </Box>
-            </Box>
-
-            <Box backgroundColor="white" borderRadius="16px" width="100%" paddingX="0px">
               <Typography textAlign="left" padding={3} fontWeight={600}>
-                Workload Alerts
+                Image Risk Assessment
+              </Typography>
+              <Typography textAlign="left" paddingX={3}>
+                1470 Total Vulnerabilities
               </Typography>
               <Box
-                marginY="50px"
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0px",
-                  height: 100,
-                  alignItems: "center",
-                  justifyContent: "center",
+                  padding: "25px",
+                  borderRadius: "8px",
                 }}
               >
-                <Box
+                <LinearProgress
+                  variant="determinate"
+                  value={98}
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "0px",
+                    height: "10px",
+                    borderRadius: "5px",
+                    backgroundColor: "#dcdcdc",
+                    "& .MuiLinearProgress-bar": {
+                      borderRadius: "5px",
+                      background:
+                        "linear-gradient(to right, #d32f2f 0%, #ffa726 65%, #ffeb3b 100%)",
+                    },
                   }}
-                >
-                  <TimelineIcon sx={{ fontSize: 50, color: "grey.500" }} />
-                  <BarChartIcon sx={{ fontSize: 40, color: "grey.500" }} />
+                />
+              </Box>
+              <Box sx={{ display: "flex", gap: "30%", mt: 2, mx: 5 }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: "#d32f2f",
+                      borderRadius: "50%",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <Typography>Critical (9)</Typography>
                 </Box>
-
-                <Typography variant="body2">
-                  No Graph data available!
-                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: "#ff7043",
+                      borderRadius: "50%",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <Typography variant="body2">High (150)</Typography>
+                </Box>
               </Box>
             </Box>
-            
-            <Box backgroundColor="white" borderRadius="16px" width="92%">
-              <Button
-                variant="outlined"
-                size="small"
+
+            <Box
+              backgroundColor="white"
+              borderRadius="16px"
+              width="100%"
+              paddingX="0px"
+            >
+              <Typography textAlign="left" padding={3} fontWeight={600}>
+                Image Security Issues
+              </Typography>
+              <Typography textAlign="left" paddingX={3}>
+                2 Total Images
+              </Typography>
+              <Box
                 sx={{
-                 textTransform: "none", 
-                  color: "primary",
-                  textAlign: "center",
-                  paddingX: "4px",
-                  marginX: "135px",
-                  marginY: "120px",
+                  padding: "25px",
+                  // backgroundColor: "#dcdcdc",
+                  borderRadius: "8px",
                 }}
               >
-                <AddIcon />
-                Add Widget
-              </Button>
+                <LinearProgress
+                  variant="determinate"
+                  value={85}
+                  sx={{
+                    height: 10,
+                    borderRadius: 5,
+                    "& .MuiLinearProgress-bar": {
+                      borderRadius: 5,
+                      background:
+                        "linear-gradient(to right, #5d0d0d 0%, #d32f2f 25%, #f57c00 50%, #ffeb3b 75%, #9e9e9e 100%)",
+                    },
+                  }}
+                />
+              </Box>
+
+              <Box sx={{ display: "flex", gap: "30%", mt: 2, mx:5 }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: "#973131",
+                      borderRadius: "50%",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <Typography variant="body2">Critical (9)</Typography>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: "#C40C0C",
+                      borderRadius: "50%",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <Typography variant="body2">High (150)</Typography>
+                </Box>
+              </Box>
+            </Box>
+
+            <Box backgroundColor="white" borderRadius="16px" width="92%">
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{
+                color: "grey.500",
+                fontWeight:"600",
+                borderColor: "grey.500",
+                textAlign: "center",
+                paddingX: "5px",
+                marginX: "135px",
+                textTransform: "none",
+                marginY: "120px",
+              }}
+            >
+              <AddIcon />
+              Add Widget
+            </Button>
             </Box>
           </Box>
         </Box>
-
-
-
-
-
-
       </Box>
     </Box>
   );
